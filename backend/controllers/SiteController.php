@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use common\models\LoginForm;
+use common\models\User;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -62,7 +63,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $usersTotais = User::find()->where(['status' => User::STATUS_ACTIVE])->count();
+        return $this->render('index', [
+            'usersTotais' => $usersTotais,
+        ]);
     }
 
     /**

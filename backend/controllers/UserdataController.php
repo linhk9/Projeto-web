@@ -5,6 +5,8 @@ namespace backend\controllers;
 use common\models\User;
 use common\models\Userdata;
 use app\models\UserdataSearch;
+use frontend\models\SignupForm;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -69,17 +71,18 @@ class UserdataController extends Controller
     public function actionCreate()
     {
         $model = new Userdata();
+        $modelSignup = new SignupForm();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($modelSignup->load($this->request->post()) && $modelSignup->signup()) {
+                return $this->redirect(['index']);
             }
         } else {
             $model->loadDefaultValues();
         }
 
         return $this->render('create', [
-            'model' => $model
+            'model' => $modelSignup
         ]);
     }
 
@@ -115,7 +118,7 @@ class UserdataController extends Controller
         $userData = $this->findModel($id);
         $model = User::findOne($userData->user_id);
 
-        if ($model && ($model->id !== $userData->user_id)) {
+        if ($model && ($model->id !== Yii::$app->user->identity->id)) {
             $model->status = User::STATUS_DELETED;
             $model->save();
         }

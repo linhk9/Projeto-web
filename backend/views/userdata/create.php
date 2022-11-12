@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
 /** @var common\models\Userdata $model */
@@ -13,8 +14,22 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
-        'model' => $model
-    ]) ?>
+    <?php $form = ActiveForm::begin(['id' => 'form-createUser']); ?>
+
+    <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+    <?= $form->field($model, 'password')->passwordInput() ?>
+    <?= $form->field($model, 'email') ?>
+
+    <?= $form->field($model, 'firstName') ?>
+    <?= $form->field($model, 'lastName') ?>
+    <?= $form->field($model, 'telemovel') ?>
+    <?= $form->field($model, 'morada') ?>
+
+
+    <div class="form-group">
+        <?= Html::submitButton('Criar Utilizador', ['class' => 'btn btn-primary', 'name' => 'createUser-button']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
 
 </div>
