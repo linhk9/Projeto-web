@@ -27,6 +27,7 @@ AppAsset::register($this);
     <?php $this->beginBody() ?>
 
     <header>
+
         <?php
         NavBar::begin([
             'brandLabel' => Yii::$app->name,
@@ -36,16 +37,20 @@ AppAsset::register($this);
             ],
         ]);
         $menuItems = [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Loja', 'url' => ['/site/shop']],
+            ['label' => 'Subscricoes', 'url' => ['/site/planSubcriptions']],
+            ['label' => 'Planos', 'url' => ['/site/trainPlans']],
+            ['label' => 'Ajuda Nutricional', 'url' => ['/site/nutritionHelp']],
+            ['label' => 'Espacos Verdes', 'url' => ['/site/greenSpaces']],
+            ['label' => 'Sobre', 'url' => ['/site/about']],
+            ['label' => 'Contactos', 'url' => ['/site/contact']],
         ];
         if (Yii::$app->user->isGuest) {
             $menuItems[] = ['label' => 'Registar', 'url' => ['/site/signup']];
         }
 
         echo Nav::widget([
-            'options' => ['class' => 'navbar-nav me-auto mb-2 mb-md-0'],
+            'options' => ['class' => 'navbar-navbar ml-auto'],
             'items' => $menuItems,
         ]);
         if (Yii::$app->user->isGuest) {
