@@ -50,7 +50,7 @@ AppAsset::register($this);
         }
 
         echo Nav::widget([
-            'options' => ['class' => 'navbar-navbar ml-auto'],
+            'options' => ['class' => 'navbar-navbar'],
             'items' => $menuItems,
         ]);
         if (Yii::$app->user->isGuest) {
