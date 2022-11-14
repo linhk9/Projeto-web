@@ -1,0 +1,485 @@
+2022-11-14 14:39:32 [-][-][-][error][yii\base\UnknownClassException] yii\base\UnknownClassException: Unable to find 'console\controllers\RbacController' in file: C:\wamp64\www\projeto/console/controllers/RbacController.php. Namespace missing? in C:\wamp64\www\projeto\vendor\yiisoft\yii2\BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('console\\control...')
+#1 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php(661): class_exists('console\\control...')
+#2 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php(620): yii\base\Module->createControllerByID('rbac')
+#3 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php(546): yii\base\Module->createController('init')
+#4 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('rbac/init', Array)
+#5 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('rbac/init', Array)
+#6 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#7 C:\wamp64\www\projeto\yii(23): yii\base\Application->run()
+#8 {main}
+2022-11-14 14:39:32 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-OH0BG4H'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Filipe Marques'
+    'LOCALAPPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-OH0BG4H'
+    'NUMBER_OF_PROCESSORS' => '12'
+    'OneDrive' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.1.0;C:\\composer;C:\\Users\\Filipe Marques\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Filipe Marques\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Filipe Marques\\AppData\\Local\\gitkraken\\bin;C:\\Users\\Filipe Marques\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Filipe Marques\\.dotnet\\tools;C:\\Users\\Filipe Marques\\AppData\\Roaming\\npm;C:\\Users\\Filipe Marques\\AppData\\Local\\JetBrains\\Toolbox\\scripts'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 141 Stepping 1, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '8d01'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-OH0BG4H'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-OH0BG4H'
+    'USERNAME' => 'Filipe Marques'
+    'USERPROFILE' => 'C:\\Users\\Filipe Marques'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp64\\www\\projeto\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\projeto\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1668436772.053
+    'REQUEST_TIME' => 1668436772
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\projeto\\yii'
+        1 => 'rbac/init'
+    ]
+    'argc' => 2
+]
+2022-11-14 14:43:20 [-][-][-][error][yii\base\UnknownClassException] yii\base\UnknownClassException: Unable to find 'console\controllers\RbacController' in file: C:\wamp64\www\projeto/console/controllers/RbacController.php. Namespace missing? in C:\wamp64\www\projeto\vendor\yiisoft\yii2\BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('console\\control...')
+#1 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php(661): class_exists('console\\control...')
+#2 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php(620): yii\base\Module->createControllerByID('rbac')
+#3 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php(546): yii\base\Module->createController('init')
+#4 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('rbac/init', Array)
+#5 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('rbac/init', Array)
+#6 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#7 C:\wamp64\www\projeto\yii(23): yii\base\Application->run()
+#8 {main}
+2022-11-14 14:43:20 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-OH0BG4H'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Filipe Marques'
+    'LOCALAPPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-OH0BG4H'
+    'NUMBER_OF_PROCESSORS' => '12'
+    'OneDrive' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.1.0;C:\\composer;C:\\Users\\Filipe Marques\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Filipe Marques\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Filipe Marques\\AppData\\Local\\gitkraken\\bin;C:\\Users\\Filipe Marques\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Filipe Marques\\.dotnet\\tools;C:\\Users\\Filipe Marques\\AppData\\Roaming\\npm;C:\\Users\\Filipe Marques\\AppData\\Local\\JetBrains\\Toolbox\\scripts'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 141 Stepping 1, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '8d01'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-OH0BG4H'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-OH0BG4H'
+    'USERNAME' => 'Filipe Marques'
+    'USERPROFILE' => 'C:\\Users\\Filipe Marques'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp64\\www\\projeto\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\projeto\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1668437000.0963
+    'REQUEST_TIME' => 1668437000
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\projeto\\yii'
+        1 => 'rbac/init'
+    ]
+    'argc' => 2
+]
+2022-11-14 14:44:24 [-][-][-][error][yii\base\UnknownClassException] yii\base\UnknownClassException: Unable to find 'console\controllers\RbacController' in file: C:\wamp64\www\projeto/console/controllers/RbacController.php. Namespace missing? in C:\wamp64\www\projeto\vendor\yiisoft\yii2\BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('console\\control...')
+#1 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php(661): class_exists('console\\control...')
+#2 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php(620): yii\base\Module->createControllerByID('rbac')
+#3 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php(546): yii\base\Module->createController('init')
+#4 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('rbac/init', Array)
+#5 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('rbac/init', Array)
+#6 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#7 C:\wamp64\www\projeto\yii(23): yii\base\Application->run()
+#8 {main}
+2022-11-14 14:44:24 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-OH0BG4H'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Filipe Marques'
+    'LOCALAPPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-OH0BG4H'
+    'NUMBER_OF_PROCESSORS' => '12'
+    'OneDrive' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.1.0;C:\\composer;C:\\Users\\Filipe Marques\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Filipe Marques\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Filipe Marques\\AppData\\Local\\gitkraken\\bin;C:\\Users\\Filipe Marques\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Filipe Marques\\.dotnet\\tools;C:\\Users\\Filipe Marques\\AppData\\Roaming\\npm;C:\\Users\\Filipe Marques\\AppData\\Local\\JetBrains\\Toolbox\\scripts'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 141 Stepping 1, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '8d01'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-OH0BG4H'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-OH0BG4H'
+    'USERNAME' => 'Filipe Marques'
+    'USERPROFILE' => 'C:\\Users\\Filipe Marques'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp64\\www\\projeto\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\projeto\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1668437064.6077
+    'REQUEST_TIME' => 1668437064
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\projeto\\yii'
+        1 => 'rbac/init'
+    ]
+    'argc' => 2
+]
+2022-11-14 14:44:49 [-][-][-][error][Error] Error: Call to a member function createPermission() on null in C:\wamp64\www\projeto\console\controllers\RbacController.php:13
+Stack trace:
+#0 [internal function]: console\controllers\RbacController->actionInit()
+#1 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#3 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('init', Array)
+#4 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('init', Array)
+#5 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('rbac/init', Array)
+#6 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('rbac/init', Array)
+#7 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 C:\wamp64\www\projeto\yii(23): yii\base\Application->run()
+#9 {main}
+2022-11-14 14:44:49 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-OH0BG4H'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Filipe Marques'
+    'LOCALAPPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-OH0BG4H'
+    'NUMBER_OF_PROCESSORS' => '12'
+    'OneDrive' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.1.0;C:\\composer;C:\\Users\\Filipe Marques\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Filipe Marques\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Filipe Marques\\AppData\\Local\\gitkraken\\bin;C:\\Users\\Filipe Marques\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Filipe Marques\\.dotnet\\tools;C:\\Users\\Filipe Marques\\AppData\\Roaming\\npm;C:\\Users\\Filipe Marques\\AppData\\Local\\JetBrains\\Toolbox\\scripts'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 141 Stepping 1, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '8d01'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-OH0BG4H'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-OH0BG4H'
+    'USERNAME' => 'Filipe Marques'
+    'USERPROFILE' => 'C:\\Users\\Filipe Marques'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp64\\www\\projeto\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\projeto\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1668437089.4756
+    'REQUEST_TIME' => 1668437089
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\projeto\\yii'
+        1 => 'rbac/init'
+    ]
+    'argc' => 2
+]
+2022-11-14 14:45:04 [-][-][-][error][Error] Error: Call to a member function createPermission() on null in C:\wamp64\www\projeto\console\controllers\RbacController.php:13
+Stack trace:
+#0 [internal function]: console\controllers\RbacController->actionInit()
+#1 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#3 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('init', Array)
+#4 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('init', Array)
+#5 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('rbac/init', Array)
+#6 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('rbac/init', Array)
+#7 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 C:\wamp64\www\projeto\yii(23): yii\base\Application->run()
+#9 {main}
+2022-11-14 14:45:04 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-OH0BG4H'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Filipe Marques'
+    'LOCALAPPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-OH0BG4H'
+    'NUMBER_OF_PROCESSORS' => '12'
+    'OneDrive' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.1.0;C:\\composer;C:\\Users\\Filipe Marques\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Filipe Marques\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Filipe Marques\\AppData\\Local\\gitkraken\\bin;C:\\Users\\Filipe Marques\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Filipe Marques\\.dotnet\\tools;C:\\Users\\Filipe Marques\\AppData\\Roaming\\npm;C:\\Users\\Filipe Marques\\AppData\\Local\\JetBrains\\Toolbox\\scripts'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 141 Stepping 1, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '8d01'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-OH0BG4H'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-OH0BG4H'
+    'USERNAME' => 'Filipe Marques'
+    'USERPROFILE' => 'C:\\Users\\Filipe Marques'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp64\\www\\projeto\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\projeto\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1668437104.4897
+    'REQUEST_TIME' => 1668437104
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\projeto\\yii'
+        1 => 'rbac/init'
+    ]
+    'argc' => 2
+]
+2022-11-14 14:51:49 [-][-][-][error][yii\db\IntegrityException] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'criarSubscricao' for key 'PRIMARY' in C:\wamp64\www\projeto\vendor\yiisoft\yii2\db\Command.php:1302
+Stack trace:
+#0 C:\wamp64\www\projeto\vendor\yiisoft\yii2\db\Command.php(1302): PDOStatement->execute()
+#1 C:\wamp64\www\projeto\vendor\yiisoft\yii2\db\Command.php(1102): yii\db\Command->internalExecute('INSERT INTO `au...')
+#2 C:\wamp64\www\projeto\vendor\yiisoft\yii2\rbac\DbManager.php(286): yii\db\Command->execute()
+#3 C:\wamp64\www\projeto\vendor\yiisoft\yii2\rbac\BaseManager.php(132): yii\rbac\DbManager->addItem(Object(yii\rbac\Permission))
+#4 C:\wamp64\www\projeto\console\controllers\RbacController.php(27): yii\rbac\BaseManager->add(Object(yii\rbac\Permission))
+#5 [internal function]: console\controllers\RbacController->actionInit()
+#6 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('init', Array)
+#9 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('init', Array)
+#10 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('rbac/init', Array)
+#11 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('rbac/init', Array)
+#12 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 C:\wamp64\www\projeto\yii(23): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\IntegrityException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'criarSubscricao' for key 'PRIMARY'
+The SQL being executed was: INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `created_at`, `updated_at`) VALUES ('criarSubscricao', 2, 'Criar Subscricao', NULL, NULL, 1668437509, 1668437509) in C:\wamp64\www\projeto\vendor\yiisoft\yii2\db\Schema.php:676
+Stack trace:
+#0 C:\wamp64\www\projeto\vendor\yiisoft\yii2\db\Command.php(1307): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `au...')
+#1 C:\wamp64\www\projeto\vendor\yiisoft\yii2\db\Command.php(1102): yii\db\Command->internalExecute('INSERT INTO `au...')
+#2 C:\wamp64\www\projeto\vendor\yiisoft\yii2\rbac\DbManager.php(286): yii\db\Command->execute()
+#3 C:\wamp64\www\projeto\vendor\yiisoft\yii2\rbac\BaseManager.php(132): yii\rbac\DbManager->addItem(Object(yii\rbac\Permission))
+#4 C:\wamp64\www\projeto\console\controllers\RbacController.php(27): yii\rbac\BaseManager->add(Object(yii\rbac\Permission))
+#5 [internal function]: console\controllers\RbacController->actionInit()
+#6 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('init', Array)
+#9 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('init', Array)
+#10 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('rbac/init', Array)
+#11 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('rbac/init', Array)
+#12 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 C:\wamp64\www\projeto\yii(23): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1062
+    [2] => Duplicate entry 'criarSubscricao' for key 'PRIMARY'
+)
+
+2022-11-14 14:51:49 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-OH0BG4H'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Filipe Marques'
+    'LOCALAPPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-OH0BG4H'
+    'NUMBER_OF_PROCESSORS' => '12'
+    'OneDrive' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.1.0;C:\\composer;C:\\Users\\Filipe Marques\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Filipe Marques\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Filipe Marques\\AppData\\Local\\gitkraken\\bin;C:\\Users\\Filipe Marques\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Filipe Marques\\.dotnet\\tools;C:\\Users\\Filipe Marques\\AppData\\Roaming\\npm;C:\\Users\\Filipe Marques\\AppData\\Local\\JetBrains\\Toolbox\\scripts'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 141 Stepping 1, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '8d01'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-OH0BG4H'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-OH0BG4H'
+    'USERNAME' => 'Filipe Marques'
+    'USERPROFILE' => 'C:\\Users\\Filipe Marques'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\wamp64\\www\\projeto\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\projeto\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1668437509.9183
+    'REQUEST_TIME' => 1668437509
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\projeto\\yii'
+        1 => 'rbac/init'
+    ]
+    'argc' => 2
+]

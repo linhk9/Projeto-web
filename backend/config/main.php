@@ -37,6 +37,10 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+		'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+            'defaultRoles' => ['admin', 'staff'],
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
