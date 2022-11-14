@@ -95,6 +95,9 @@
             $apagarInfoTreino->description = 'Apagar Informação de Treino';
             $auth->add($apagarInfoTreino);
 
+			$cliente = $auth->createRole('cliente');
+			$auth->add($cliente);
+
             $staff = $auth->createRole('staff');
             $auth->add($staff);
 						
@@ -130,7 +133,7 @@
             $auth->addChild($admin, $apagarUser);
 
             $auth->addChild($admin, $staff);
-
+			
             $auth->assign($staff, 2);
         }
     }
