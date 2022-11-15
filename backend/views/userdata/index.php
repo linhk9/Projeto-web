@@ -1,5 +1,6 @@
 <?php
 
+use yii\grid\SerialColumn;
 use common\models\Userdata;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -25,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            ['class' => SerialColumn::class],
             'firstName',
             'lastName',
             'telemovel',

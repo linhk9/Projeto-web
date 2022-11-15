@@ -1,4 +1,7 @@
 <?php
+
+use yii\rbac\DbManager;
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
@@ -38,8 +41,7 @@ return [
             'errorAction' => 'site/error',
         ],
 		'authManager' => [
-            'class' => 'yii\rbac\DbManager',
-            'defaultRoles' => ['admin', 'staff'],
+            'class' => DbManager::class
         ],
         /*
         'urlManager' => [

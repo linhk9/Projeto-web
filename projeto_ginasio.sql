@@ -29,10 +29,11 @@ CREATE TABLE IF NOT EXISTS `auth_assignment` (
   CONSTRAINT `auth_assignment_ibfk_1` FOREIGN KEY (`item_name`) REFERENCES `auth_item` (`name`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- A despejar dados para tabela projeto_ginasio.auth_assignment: ~2 rows (aproximadamente)
+-- A despejar dados para tabela projeto_ginasio.auth_assignment: ~3 rows (aproximadamente)
 INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
-	('cliente', '6', 1668442873),
-	('staff', '2', 1668442780);
+	('admin', '2', 1668513014),
+	('cliente', '9', 1668514296),
+	('staff', '8', 1668514264);
 
 -- A despejar estrutura para tabela projeto_ginasio.auth_item
 CREATE TABLE IF NOT EXISTS `auth_item` (
@@ -49,32 +50,46 @@ CREATE TABLE IF NOT EXISTS `auth_item` (
   CONSTRAINT `auth_item_ibfk_1` FOREIGN KEY (`rule_name`) REFERENCES `auth_rule` (`name`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- A despejar dados para tabela projeto_ginasio.auth_item: ~24 rows (aproximadamente)
+-- A despejar dados para tabela projeto_ginasio.auth_item: ~38 rows (aproximadamente)
 INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `created_at`, `updated_at`) VALUES
-	('admin', 1, NULL, NULL, NULL, 1668442780, 1668442780),
-	('alterarEspacoVerde', 2, 'Alterar Espaço Verde', NULL, NULL, 1668442780, 1668442780),
-	('alterarInfoTreino', 2, 'Alterar Informação de Treino', NULL, NULL, 1668442780, 1668442780),
-	('alterarPlanoTreino', 2, 'Alterar Plano de Treino', NULL, NULL, 1668442780, 1668442780),
-	('alterarProduto', 2, 'Alterar Produto', NULL, NULL, 1668442780, 1668442780),
-	('alterarQRCode', 2, 'Alterar QRCode', NULL, NULL, 1668442780, 1668442780),
-	('alterarSubscricao', 2, 'Alterar Subscricao', NULL, NULL, 1668442780, 1668442780),
-	('alterarUser', 2, 'Atualizar User', NULL, NULL, 1668442780, 1668442780),
-	('apagarEspacoVerde', 2, 'Apagar Espaço Verde', NULL, NULL, 1668442780, 1668442780),
-	('apagarInfoTreino', 2, 'Apagar Informação de Treino', NULL, NULL, 1668442780, 1668442780),
-	('apagarPlanoTreino', 2, 'Apagar Plano de Treino', NULL, NULL, 1668442780, 1668442780),
-	('apagarProduto', 2, 'Apagar Produto', NULL, NULL, 1668442780, 1668442780),
-	('apagarQRCode', 2, 'Apagar QRCode', NULL, NULL, 1668442780, 1668442780),
-	('apagarSubscricao', 2, 'Apagar Subscricao', NULL, NULL, 1668442780, 1668442780),
-	('apagarUser', 2, 'Apagar User', NULL, NULL, 1668442780, 1668442780),
-	('cliente', 1, NULL, NULL, NULL, 1668442780, 1668442780),
-	('criarEspacoVerde', 2, 'Criar Espaço Verde', NULL, NULL, 1668442780, 1668442780),
-	('criarInfoTreino', 2, 'Criar Informação de Treino', NULL, NULL, 1668442780, 1668442780),
-	('criarPlanoTreino', 2, 'Criar Plano de Treino', NULL, NULL, 1668442780, 1668442780),
-	('criarProduto', 2, 'Criar Produto', NULL, NULL, 1668442780, 1668442780),
-	('criarQRCode', 2, 'Criar QRCode', NULL, NULL, 1668442780, 1668442780),
-	('criarSubscricao', 2, 'Criar Subscricao', NULL, NULL, 1668442780, 1668442780),
-	('criarUser', 2, 'Criar User', NULL, NULL, 1668442780, 1668442780),
-	('staff', 1, NULL, NULL, NULL, 1668442780, 1668442780);
+	('admin', 1, NULL, NULL, NULL, 1668513014, 1668513014),
+	('alterarEspacoVerde', 2, 'Alterar Espaço Verde', NULL, NULL, 1668513014, 1668513014),
+	('alterarInfoTreino', 2, 'Alterar Informação de Treino', NULL, NULL, 1668513014, 1668513014),
+	('alterarPlanoTreino', 2, 'Alterar Plano de Treino', NULL, NULL, 1668513014, 1668513014),
+	('alterarProduto', 2, 'Alterar Produto', NULL, NULL, 1668513014, 1668513014),
+	('alterarQRCode', 2, 'Alterar QRCode', NULL, NULL, 1668513014, 1668513014),
+	('alterarSubscricao', 2, 'Alterar Subscricao', NULL, NULL, 1668513014, 1668513014),
+	('alterarUser', 2, 'Atualizar User', NULL, NULL, 1668513014, 1668513014),
+	('apagarEspacoVerde', 2, 'Apagar Espaço Verde', NULL, NULL, 1668513014, 1668513014),
+	('apagarInfoTreino', 2, 'Apagar Informação de Treino', NULL, NULL, 1668513014, 1668513014),
+	('apagarPlanoTreino', 2, 'Apagar Plano de Treino', NULL, NULL, 1668513014, 1668513014),
+	('apagarProduto', 2, 'Apagar Produto', NULL, NULL, 1668513014, 1668513014),
+	('apagarQRCode', 2, 'Apagar QRCode', NULL, NULL, 1668513014, 1668513014),
+	('apagarSubscricao', 2, 'Apagar Subscricao', NULL, NULL, 1668513014, 1668513014),
+	('apagarUser', 2, 'Apagar User', NULL, NULL, 1668513014, 1668513014),
+	('cliente', 1, NULL, NULL, NULL, 1668513014, 1668513014),
+	('criarEspacoVerde', 2, 'Criar Espaço Verde', NULL, NULL, 1668513014, 1668513014),
+	('criarInfoTreino', 2, 'Criar Informação de Treino', NULL, NULL, 1668513014, 1668513014),
+	('criarPlanoTreino', 2, 'Criar Plano de Treino', NULL, NULL, 1668513014, 1668513014),
+	('criarProduto', 2, 'Criar Produto', NULL, NULL, 1668513014, 1668513014),
+	('criarQRCode', 2, 'Criar QRCode', NULL, NULL, 1668513014, 1668513014),
+	('criarSubscricao', 2, 'Criar Subscricao', NULL, NULL, 1668513014, 1668513014),
+	('criarUser', 2, 'Criar User', NULL, NULL, 1668513014, 1668513014),
+	('gerirEspacoVerde', 2, 'Gerir Espaço Verde', NULL, NULL, 1668513014, 1668513014),
+	('gerirInfoTreino', 2, 'Gerir Informação de Treino', NULL, NULL, 1668513014, 1668513014),
+	('gerirPlanoTreino', 2, 'Gerir Plano de Treino', NULL, NULL, 1668513014, 1668513014),
+	('gerirProduto', 2, 'Gerir Produto', NULL, NULL, 1668513014, 1668513014),
+	('gerirQRCode', 2, 'Gerir QRCode', NULL, NULL, 1668513014, 1668513014),
+	('gerirSubscricao', 2, 'Gerir Subscricao', NULL, NULL, 1668513014, 1668513014),
+	('gerirUser', 2, 'Gerir User', NULL, NULL, 1668513014, 1668513014),
+	('staff', 1, NULL, NULL, NULL, 1668513014, 1668513014),
+	('verEspacoVerde', 2, 'Ver Espaço Verde', NULL, NULL, 1668513014, 1668513014),
+	('verInfoTreino', 2, 'Ver Informação de Treino', NULL, NULL, 1668513014, 1668513014),
+	('verPlanoTreino', 2, 'Ver Plano de Treino', NULL, NULL, 1668513014, 1668513014),
+	('verProduto', 2, 'Ver Produto', NULL, NULL, 1668513014, 1668513014),
+	('verQRCode', 2, 'Ver QRCode', NULL, NULL, 1668513014, 1668513014),
+	('verSubscricao', 2, 'Ver Subscricao', NULL, NULL, 1668513014, 1668513014),
+	('verUser', 2, 'Ver User', NULL, NULL, 1668513014, 1668513014);
 
 -- A despejar estrutura para tabela projeto_ginasio.auth_item_child
 CREATE TABLE IF NOT EXISTS `auth_item_child` (
@@ -86,30 +101,44 @@ CREATE TABLE IF NOT EXISTS `auth_item_child` (
   CONSTRAINT `auth_item_child_ibfk_2` FOREIGN KEY (`child`) REFERENCES `auth_item` (`name`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- A despejar dados para tabela projeto_ginasio.auth_item_child: ~22 rows (aproximadamente)
+-- A despejar dados para tabela projeto_ginasio.auth_item_child: ~36 rows (aproximadamente)
 INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
-	('staff', 'alterarEspacoVerde'),
+	('admin', 'alterarEspacoVerde'),
 	('admin', 'alterarInfoTreino'),
 	('staff', 'alterarPlanoTreino'),
 	('staff', 'alterarProduto'),
 	('admin', 'alterarQRCode'),
 	('admin', 'alterarSubscricao'),
 	('staff', 'alterarUser'),
-	('staff', 'apagarEspacoVerde'),
+	('admin', 'apagarEspacoVerde'),
 	('admin', 'apagarInfoTreino'),
 	('staff', 'apagarPlanoTreino'),
 	('staff', 'apagarProduto'),
 	('admin', 'apagarQRCode'),
 	('admin', 'apagarSubscricao'),
 	('admin', 'apagarUser'),
-	('staff', 'criarEspacoVerde'),
+	('admin', 'criarEspacoVerde'),
 	('admin', 'criarInfoTreino'),
 	('staff', 'criarPlanoTreino'),
 	('staff', 'criarProduto'),
 	('admin', 'criarQRCode'),
 	('admin', 'criarSubscricao'),
 	('admin', 'criarUser'),
-	('admin', 'staff');
+	('admin', 'gerirEspacoVerde'),
+	('admin', 'gerirInfoTreino'),
+	('staff', 'gerirPlanoTreino'),
+	('staff', 'gerirProduto'),
+	('admin', 'gerirQRCode'),
+	('admin', 'gerirSubscricao'),
+	('staff', 'gerirUser'),
+	('admin', 'staff'),
+	('admin', 'verEspacoVerde'),
+	('admin', 'verInfoTreino'),
+	('staff', 'verPlanoTreino'),
+	('staff', 'verProduto'),
+	('admin', 'verQRCode'),
+	('admin', 'verSubscricao'),
+	('staff', 'verUser');
 
 -- A despejar estrutura para tabela projeto_ginasio.auth_rule
 CREATE TABLE IF NOT EXISTS `auth_rule` (
@@ -311,13 +340,13 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `password_reset_token` (`password_reset_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- A despejar dados para tabela projeto_ginasio.user: ~2 rows (aproximadamente)
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`, `verification_token`) VALUES
 	(2, 'filipe', '_oVLJx1e57o4v2zRJyi5kA1ZBRa54wYL', '$2y$13$iTCH9FVakT5Zf4NS4dI/VufwJHW9wBuNSr5aStoUswTeEDPGJL9.C', NULL, '2211921@my.ipleiria.pt', 10, 1666628655, 1667236194, 'Ot17Dcr9OnIBsj-DV8btojnpq0QxqxgS_1666628655'),
-	(5, 'teste', 'tQhXqmV2RDHG3BwkPjoLJobswpQfO1OT', '$2y$13$lCt1uzVIVArPtxzIMElFXuP3lol.wSmWXcANhKAJHnJBtzkCCpMv.', NULL, 'teste@gmail.com', 10, 1668438133, 1668438133, 'TYUdWxYlXKpoUYdn-27D7Urd8m7enedL_1668438133'),
-	(6, 'cliente', 'SMBCP-4KvxJ9qLcGvldc2lFCeWruGOIc', '$2y$13$zTb4ZzcEXgb2l4zrc6XHm.2PDnSgdZ1g4OfCARzFhGAY7DaBUr0US', NULL, 'cliente@gmail.com', 10, 1668442873, 1668442873, 'LmhVv5OtYKVBYyZi3NKXOHDooHftKTJg_1668442873');
+	(8, 'staff', 'Nh0Z4q5naZiqS8BxUUGw-uK3kfEAqLGf', '$2y$13$kQkXk0FBicyXgYpOT33sGeWDkvTd5/EaDXyhNFE0q0finAFHLTdb.', NULL, 'staff@gmail.com', 10, 1668514264, 1668514264, '4m2wR3JDZXbqoaFSuqlortmWrCrh27uG_1668514264'),
+	(9, 'cliente', '9ING9N-kxHjeotjKBW919y3XOK2KuFO9', '$2y$13$eIphoeRNYvHI4xnqbC98geKGh3zuvo7VveCbp3ROkKWpxNHAuOy3y', NULL, 'cliente@gmail.com', 10, 1668514296, 1668514296, '6pCfz109i2sr190IYqNZ_1a-g0_wF2m5_1668514296');
 
 -- A despejar estrutura para tabela projeto_ginasio.userdata
 CREATE TABLE IF NOT EXISTS `userdata` (
@@ -333,13 +362,13 @@ CREATE TABLE IF NOT EXISTS `userdata` (
   KEY `FK_userData_subscricao` (`subscricao`),
   CONSTRAINT `FK_userData_subscricao` FOREIGN KEY (`subscricao`) REFERENCES `subscricoes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_userData_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- A despejar dados para tabela projeto_ginasio.userdata: ~2 rows (aproximadamente)
+-- A despejar dados para tabela projeto_ginasio.userdata: ~1 rows (aproximadamente)
 INSERT INTO `userdata` (`id`, `user_id`, `firstName`, `lastName`, `telemovel`, `morada`, `subscricao`) VALUES
 	(1, 2, 'Filipe', 'Marques', 913194666, 'Leiria, rua xpto', 1),
-	(4, 5, 'Teste', 'Teste', 913194123, 'xpto', 1),
-	(5, 6, 'cliente', 'cliente', 123123123, 'xpto', 1);
+	(7, 8, 'staff', 'staff', 912213321, 'xpto', 1),
+	(8, 9, 'cliente', 'cliente', 981283774, 'xpto', 2);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
