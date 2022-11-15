@@ -147,7 +147,7 @@ class UserdataController extends Controller
     public function actionDelete($id)
     {
         $userData = $this->findModel($id);
-        $model = User::findOne($userData->user_id);
+        $model = User::findOne($userData->id_user);
 
         if ($model && ($model->id !== Yii::$app->user->identity->id)) {
             $model->status = User::STATUS_DELETED;

@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var common\models\Userdata $model */
 
-$this->title = $model->firstName . " " . $model->lastName . " | " . $model->user_id;
+$this->title = $model->firstName . " " . $model->lastName . " | " . $model->id_user;
 $this->params['breadcrumbs'][] = ['label' => 'Gestão de Utilizadores', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -28,12 +28,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
 //            'id',
-            'user_id',
+            'id_user',
             'firstName',
             'lastName',
             'telemovel',
             'morada',
-            'subscricao',
+            'id_subscricao',
         ],
     ]) ?>
 

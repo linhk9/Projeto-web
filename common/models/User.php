@@ -147,7 +147,7 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     public function getName() {
-        $userData = Userdata::find()->where(['user_id' => $this->getId()])->one();
+        $userData = Userdata::find()->where(['id_user' => $this->getId()])->one();
         if ($userData) {
             return $userData->firstName . " " . $userData->lastName;
         }
@@ -229,6 +229,6 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function getUserdata()
     {
-        return $this->hasMany(Userdata::class, ['user_id' => 'id']);
+        return $this->hasMany(Userdata::class, ['id_user' => 'id']);
     }
 }

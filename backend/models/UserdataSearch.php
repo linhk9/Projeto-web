@@ -18,7 +18,7 @@ class UserdataSearch extends Userdata
     public function rules()
     {
         return [
-            [['id', 'user_id', 'telemovel', 'subscricao'], 'integer'],
+            [['id', 'id_user', 'telemovel', 'id_subscricao'], 'integer'],
             [['firstName', 'lastName', 'morada'], 'safe'],
         ];
     }
@@ -60,9 +60,9 @@ class UserdataSearch extends Userdata
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'user_id' => $this->user_id,
+            'id_user' => $this->id_user,
             'telemovel' => $this->telemovel,
-            'subscricao' => $this->subscricao,
+            'id_subscricao' => $this->id_subscricao,
         ]);
 
         $query->andFilterWhere(['like', 'firstName', $this->firstName])

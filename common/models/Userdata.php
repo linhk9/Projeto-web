@@ -8,14 +8,18 @@ use Yii;
  * This is the model class for table "userdata".
  *
  * @property int $id
- * @property int $user_id
+ * @property int $id_user
  * @property string $firstName
  * @property string $lastName
  * @property int $telemovel
  * @property string $morada
- * @property int $subscricao
+ * @property int $id_subscricao
  *
- * @property Subscricoes $subscricao0
+ * @property Carrinho[] $carrinhos
+ * @property Estatisticas[] $estatisticas
+ * @property Fatura[] $faturas
+ * @property Planotreinopersonalizado[] $planotreinopersonalizados
+ * @property Subscricoes $subscricao
  * @property User $user
  */
 class Userdata extends \yii\db\ActiveRecord
@@ -34,11 +38,11 @@ class Userdata extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'firstName', 'lastName', 'telemovel', 'morada'], 'required'],
-            [['user_id', 'telemovel', 'subscricao'], 'integer'],
+            [['id_user', 'firstName', 'lastName', 'telemovel', 'morada'], 'required'],
+            [['id_user', 'telemovel', 'id_subscricao'], 'integer'],
             [['firstName', 'lastName', 'morada'], 'string', 'max' => 255],
-            [['subscricao'], 'exist', 'skipOnError' => true, 'targetClass' => Subscricoes::class, 'targetAttribute' => ['subscricao' => 'id']],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
+            [['id_subscricao'], 'exist', 'skipOnError' => true, 'targetClass' => Subscricoes::class, 'targetAttribute' => ['id_subscricao' => 'id']],
+            [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['id_user' => 'id']],
         ];
     }
 
@@ -49,13 +53,53 @@ class Userdata extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'user_id' => 'User ID',
+            'id_user' => 'Id User',
             'firstName' => 'First Name',
             'lastName' => 'Last Name',
             'telemovel' => 'Telemovel',
             'morada' => 'Morada',
-            'subscricao' => 'Subscricao',
+            'id_subscricao' => 'Id Subscricao',
         ];
+    }
+
+    /**
+     * Gets query for [[Carrinhos]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCarrinhos()
+    {
+        return $this->hasMany(Carrinho::class, ['id_userdata' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Estatisticas]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEstatisticas()
+    {
+        return $this->hasMany(Estatisticas::class, ['id_userdata' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Faturas]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFaturas()
+    {
+        return $this->hasMany(Fatura::class, ['id_userdata' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Planotreinopersonalizados]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPlanotreinopersonalizados()
+    {
+        return $this->hasMany(Planotreinopersonalizado::class, ['id_userdata' => 'id']);
     }
 
     /**
@@ -65,7 +109,7 @@ class Userdata extends \yii\db\ActiveRecord
      */
     public function getSubscricao()
     {
-        return $this->hasOne(Subscricoes::class, ['id' => 'subscricao']);
+        return $this->hasOne(Subscricoes::class, ['id' => 'id_subscricao']);
     }
 
     /**
@@ -75,6 +119,6 @@ class Userdata extends \yii\db\ActiveRecord
      */
     public function getUser()
     {
-        return $this->hasOne(User::class, ['id' => 'user_id']);
+        return $this->hasOne(User::class, ['id' => 'id_user']);
     }
 }

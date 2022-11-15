@@ -30,8 +30,8 @@ class Subscricoes extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'descricao', 'preco'], 'required'],
-            [['preco'], 'float'],
+            [['nome', 'descricao'], 'required'],
+            [['preco'], 'number'],
             [['nome', 'descricao'], 'string', 'max' => 50],
         ];
     }
@@ -56,6 +56,6 @@ class Subscricoes extends \yii\db\ActiveRecord
      */
     public function getUserdatas()
     {
-        return $this->hasMany(Userdata::class, ['subscricao' => 'id']);
+        return $this->hasMany(Userdata::class, ['id_subscricao' => 'id']);
     }
 }
