@@ -2,7 +2,9 @@
 
 namespace backend\controllers;
 
+use common\models\Fatura;
 use common\models\LoginForm;
+use common\models\Produto;
 use common\models\User;
 use Yii;
 use yii\filters\VerbFilter;
@@ -64,8 +66,12 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $usersTotais = User::find()->where(['status' => User::STATUS_ACTIVE])->count();
+        $produtosTotais = Produto::find()->where([])->count();
+        $faturasTotais = Fatura::find()->where([])->count();
         return $this->render('index', [
             'usersTotais' => $usersTotais,
+            'produtosTotais' => $produtosTotais,
+            'faturasTotais' => $faturasTotais,
         ]);
     }
 
