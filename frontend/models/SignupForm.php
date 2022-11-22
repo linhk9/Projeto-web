@@ -83,7 +83,7 @@ class SignupForm extends Model
         $userData->lastName = $this->lastName;
         $userData->telemovel = $this->telemovel;
         $userData->morada = $this->morada;
-        $userData->user_id = $user->id;
+        $userData->id_user = $user->id;
 
         $userDataCreated = $userData->save();
 
