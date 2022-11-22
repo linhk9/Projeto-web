@@ -12,7 +12,8 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_planoTreino')->textInput() ?>
+    <?= $form->field($model, 'id_planoTreino')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\Planotreino::find()->asArray()->all(), 'id', 'tipo')) ?>
+
 
     <?= $form->field($model, 'titulo')->textInput(['maxlength' => true]) ?>
 
