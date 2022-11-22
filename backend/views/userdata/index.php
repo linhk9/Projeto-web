@@ -1,5 +1,6 @@
 <?php
 
+use common\models\User;
 use yii\grid\SerialColumn;
 use common\models\Userdata;
 use yii\helpers\Html;
@@ -31,7 +32,28 @@ $this->params['breadcrumbs'][] = $this->title;
             'lastName',
             'telemovel',
             'morada',
-            'id_subscricao',
+            [
+                'label' => 'Subscrição',
+                'value' => function($model) {
+                    return $model->subscricao->nome;
+                }
+            ],
+            [
+                'label' => 'Status',
+                'value' => function($model) {
+                    if ($model->user->status === User::STATUS_ACTIVE) {
+                        return 'Ativo';
+                    }
+
+                    if ($model->user->status === User::STATUS_DELETED) {
+                        return 'Apagado';
+                    }
+
+                    return 'Inativo';
+                }
+            ],
+
+
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Userdata $model, $key, $index, $column) {

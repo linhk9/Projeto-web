@@ -29,7 +29,16 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => SerialColumn::class],
 
             'id',
-            'id_planoTreino',
+            [
+                'label' => 'Plano de Treino',
+                'value' => function($model) {
+                    if ($model->planoTreino) {
+                        return $model->planoTreino->nome;
+                    }
+
+                    return 'Sem Plano de Treino';
+                }
+            ],
             'titulo',
             'descricao',
             [
