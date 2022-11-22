@@ -17,7 +17,11 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="qrcodes-index">
 
     <p>
+<<<<<<< HEAD
         <?= Html::a('Criar Qrcodes', ['create'], ['class' => 'btn btn-success']) ?>
+=======
+        <?= Html::a('Criar Qrcode', ['create'], ['class' => 'btn btn-success']) ?>
+>>>>>>> master
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

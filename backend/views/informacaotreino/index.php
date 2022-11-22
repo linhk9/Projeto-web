@@ -17,7 +17,11 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="informacaotreino-index">
 
     <p>
+<<<<<<< HEAD
         <?= Html::a('Criar Informacao de treino', ['create'], ['class' => 'btn btn-success']) ?>
+=======
+        <?= Html::a('Criar Informacão de treino', ['create'], ['class' => 'btn btn-success']) ?>
+>>>>>>> master
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
