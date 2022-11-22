@@ -31,12 +31,12 @@ use yii\helpers\Html;
                         'icon' => 'tachometer-alt',
                         'items' => [
                             ['label' => 'Utilizadores', 'url' => ['userdata/index'], 'iconStyle' => 'far'],
-                            ['label' => 'Espaços Verdes', 'url' => ['espacoverde/index'], 'iconStyle' => 'far'],
-                            ['label' => 'Informação de Treino', 'url' => ['infotreino/index'], 'iconStyle' => 'far'],
+                            ['label' => 'Espaços Verdes', 'url' => ['espacosverdes/index'], 'iconStyle' => 'far'],
+                            ['label' => 'Informação de Treino', 'url' => ['informacaotreino/index'], 'iconStyle' => 'far'],
                             ['label' => 'Planos de Treino', 'url' => ['planotreino/index'], 'iconStyle' => 'far'],
                             ['label' => 'Subscrições', 'url' => ['subscricao/index'], 'iconStyle' => 'far'],
                             ['label' => 'Produtos', 'url' => ['produto/index'], 'iconStyle' => 'far'],
-                            ['label' => 'QRCode', 'url' => ['qrcode/index'], 'iconStyle' => 'far'],
+                            ['label' => 'QRCode', 'url' => ['qrcodes/index'], 'iconStyle' => 'far'],
                         ]
                     ],
                 ],
