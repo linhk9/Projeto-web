@@ -39,7 +39,7 @@ use yii\helpers\Html;
                             ['label' => 'QRCode', 'url' => ['qrcodes/index'], 'iconStyle' => 'far'],
                         ]
                     ],
-                    ['label' => 'Faturas',  'icon' => 'file-code', 'url' => ['fatura/index']],
+                    ['label' => 'Faturas',  'icon' => 'file-invoice', 'url' => ['fatura/index']],
                 ],
             ]);
             ?>
