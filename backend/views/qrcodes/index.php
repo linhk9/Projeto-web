@@ -1,5 +1,6 @@
 <?php
 
+use yii\grid\SerialColumn;
 use common\models\Qrcodes;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -15,10 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="qrcodes-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
     <p>
-        <?= Html::a('Create Qrcodes', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar Qrcodes', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -27,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            ['class' => SerialColumn::class],
 
             'id',
             'titulo',

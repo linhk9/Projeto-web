@@ -1,5 +1,6 @@
 <?php
 
+use yii\grid\SerialColumn;
 use common\models\Informacaotreino;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -10,15 +11,13 @@ use yii\grid\GridView;
 /** @var backend\models\InformacaotreinoSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Informacaotreinos';
+$this->title = 'Informação de treinos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="informacaotreino-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
     <p>
-        <?= Html::a('Create Informacaotreino', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar Informacao de treino', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -27,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            ['class' => SerialColumn::class],
 
             'id',
             'id_planoTreino',

@@ -1,5 +1,6 @@
 <?php
 
+use yii\grid\SerialColumn;
 use common\models\Espacosverdes;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -10,15 +11,13 @@ use yii\grid\GridView;
 /** @var backend\models\EspacosverdesSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Espacosverdes';
+$this->title = 'Espaços verdes';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="espacosverdes-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
     <p>
-        <?= Html::a('Create Espacosverdes', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar Espacosverdes', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -27,14 +26,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            ['class' => SerialColumn::class],
 
             'id',
             'zona',
             'disponivel',
             'latitude',
             'longitude',
-            //'altitude',
+            'altitude',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Espacosverdes $model, $key, $index, $column) {

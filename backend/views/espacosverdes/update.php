@@ -5,14 +5,12 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var common\models\Espacosverdes $model */
 
-$this->title = 'Update Espacosverdes: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Espacosverdes', 'url' => ['index']];
+$this->title = 'Alterar Espaços verdes: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Espaços verdes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Alterar';
 ?>
 <div class="espacosverdes-update">
-
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,

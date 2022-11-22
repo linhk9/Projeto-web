@@ -5,14 +5,12 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var common\models\Planotreino $model */
 
-$this->title = 'Update Planotreino: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Planotreinos', 'url' => ['index']];
+$this->title = 'Alterar Plano de treino: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Plano de treino', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Alterar';
 ?>
 <div class="planotreino-update">
-
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,
