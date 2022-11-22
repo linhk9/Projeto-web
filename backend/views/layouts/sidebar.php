@@ -34,8 +34,8 @@ use yii\helpers\Html;
                             ['label' => 'Espaços Verdes', 'url' => ['espacosverdes/index'], 'iconStyle' => 'far'],
                             ['label' => 'Informação de Treino', 'url' => ['informacaotreino/index'], 'iconStyle' => 'far'],
                             ['label' => 'Planos de Treino', 'url' => ['planotreino/index'], 'iconStyle' => 'far'],
-                            ['label' => 'Subscrições', 'url' => ['subscricao/index'], 'iconStyle' => 'far'],
-                            ['label' => 'Produtos', 'url' => ['produto/index'], 'iconStyle' => 'far'],
+                            ['label' => 'Subscrições', 'url' => ['subscricoes/index'], 'iconStyle' => 'far'],
+                            ['label' => 'Produtos', 'url' => ['produtos/index'], 'iconStyle' => 'far'],
                             ['label' => 'QRCode', 'url' => ['qrcodes/index'], 'iconStyle' => 'far'],
                         ]
                     ],
