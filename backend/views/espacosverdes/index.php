@@ -17,11 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="espacosverdes-index">
 
     <p>
-<<<<<<< HEAD
-        <?= Html::a('Criar Espacosverdes', ['create'], ['class' => 'btn btn-success']) ?>
-=======
-        <?= Html::a('Criar Espaco Verde', ['create'], ['class' => 'btn btn-success']) ?>
->>>>>>> master
+        <?= Html::a('Criar Espaço Verde', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
