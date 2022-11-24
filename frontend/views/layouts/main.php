@@ -8,83 +8,145 @@ use common\widgets\Alert;
 use frontend\assets\AppAsset;
 use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
-use yii\bootstrap5\Nav;
-use yii\bootstrap5\NavBar;
 
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
-    <!DOCTYPE html>
-    <html lang="<?= Yii::$app->language ?>" class="h-100">
-    <head>
-        <meta charset="<?= Yii::$app->charset ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <?php $this->registerCsrfMetaTags() ?>
-        <title><?= Html::encode($this->title) ?></title>
-        <?php $this->head() ?>
-    </head>
-    <body class="d-flex flex-column h-100">
-    <?php $this->beginBody() ?>
+<!DOCTYPE html>
+<html lang="<?= Yii::$app->language ?>" class="h-100">
+<head>
+	<meta charset="<?= Yii::$app->charset ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<?php $this->registerCsrfMetaTags() ?>
+	<title><?= Html::encode($this->title) ?></title>
+	<?php $this->head() ?>
+</head>
 
-    <header>
+<body class="d-flex flex-column h-100">
 
-        <?php
-        NavBar::begin([
-            'brandLabel' => Yii::$app->name,
-            'brandUrl' => Yii::$app->homeUrl,
-            'options' => [
-                'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
-            ],
-        ]);
-        $menuItems = [
-            ['label' => 'Loja', 'url' => ['/site/shop']],
-            ['label' => 'Subscricoes', 'url' => ['/site/planSubcriptions']],
-            ['label' => 'Planos', 'url' => ['/site/trainPlans']],
-            ['label' => 'Ajuda Nutricional', 'url' => ['/site/nutritionHelp']],
-            ['label' => 'Espacos Verdes', 'url' => ['/site/greenSpaces']],
-            ['label' => 'Sobre', 'url' => ['/site/about']],
-            ['label' => 'Contactos', 'url' => ['/site/contact']],
-        ];
-        if (Yii::$app->user->isGuest) {
-            $menuItems[] = ['label' => 'Registar', 'url' => ['/site/signup']];
-        }
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
 
-        echo Nav::widget([
-            'options' => ['class' => 'navbar-navbar ml-auto'],
-            'items' => $menuItems,
-        ]);
-        if (Yii::$app->user->isGuest) {
-            echo Html::tag('div', Html::a('Login', ['/site/login'], ['class' => ['btn btn-link login text-decoration-none']]), ['class' => ['d-flex']]);
-        } else {
-            echo Html::beginForm(['/site/logout'], 'post', ['class' => 'd-flex'])
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout text-decoration-none']
-                )
-                . Html::endForm();
-        }
-        NavBar::end();
-        ?>
+	<?php $this->beginBody() ?>
+
+    <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="top-left" style="color: white;">
+                            <?= Html::encode(Yii::$app->name) ?>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12"><div class="top-middle"></div></div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="top-end">
+                            <ul class="user-login">
+                                <li>
+                                    <?php
+                                        if (Yii::$app->user->isGuest) {
+                                            echo Html::a('Login', ['/site/login']);
+                                        }
+                                    ?>
+                                </li>
+                                <li>
+                                    <?php
+                                        if (Yii::$app->user->isGuest) {
+                                            echo Html::a('Registo', ['/site/signup']);
+                                        } else {
+                                            echo Html::a('Logout (' . Yii::$app->user->identity->username . ')', ['/site/logout'], ['data-method' => 'post']);
+                                        }
+                                    ?>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Topbar -->
+        <!-- Start Header Bottom -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-6 col-12">
+                    <div class="nav-inner">
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <?= Html::a('Home', ['/site/index']) ?>
+                                    </li>
+                                    <li class="nav-item">
+                                        <?= Html::a('Subscricoes', ['/subscricoes/index']) ?>
+                                    </li>
+                                    <li class="nav-item">
+                                        <?= Html::a('Loja', ['/loja/index']) ?>
+                                    </li>
+                                    <li class="nav-item">
+                                        <?= Html::a('Planos de Treino', ['/planostreinos/index']) ?>
+                                    </li>
+                                    <li class="nav-item">
+                                        <?= Html::a('Ajuda Nutricional', ['/ajudanutricional/index']) ?>
+                                    </li>
+                                    <li class="nav-item">
+                                        <?= Html::a('Espaços Verdes', ['/espacosverdes/index']) ?>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Header Bottom -->
     </header>
+    <!-- End Header Area -->
+    <br>
 
-    <main role="main" class="flex-shrink-0">
+	<main role="main" class="flex-shrink-0">
         <div class="container">
             <?= Breadcrumbs::widget([
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                'links' => $this->params['breadcrumbs'] ?? [],
             ]) ?>
-            <?= Alert::widget() ?>
             <?= $content ?>
         </div>
     </main>
 
-    <footer class="footer mt-auto py-5 bg-dark text-muted">
-        <div class="container">
-            <p class="float-start">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-            <p class="float-end"><?= Yii::powered() ?></p>
+    <br>
+
+    <!-- Start Footer Area -->
+    <footer class="footer">
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="inner-content">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-12">
+                            <div class="payment-gateway">
+                                <span>&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- End Footer Bottom -->
     </footer>
+    <!--/ End Footer Area -->
 
     <?php $this->endBody() ?>
-    </body>
-    </html>
+</body>
+</html>
 <?php $this->endPage();
