@@ -94,10 +94,10 @@ AppAsset::register($this);
                                         <?= Html::a('Loja', ['/loja/index']) ?>
                                     </li>
                                     <li class="nav-item">
-                                        <?= Html::a('Planos de Treino', ['/planostreinos/index']) ?>
+                                        <?= Html::a('Planos de Treino', ['/planotreino/index']) ?>
                                     </li>
                                     <li class="nav-item">
-                                        <?= Html::a('Ajuda Nutricional', ['/ajudanutricional/index']) ?>
+                                        <?= Html::a('Informação de Treino', ['/informacaotreino/index']) ?>
                                     </li>
                                     <li class="nav-item">
                                         <?= Html::a('Espaços Verdes', ['/espacosverdes/index']) ?>
