@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Plano de Treino',
                 'value' => function($model) {
                     if ($model->planoTreino) {
-                        return $model->planoTreino->nome;
+                        return $model->planoTreino->tipo;
                     }
 
                     return 'Sem Plano de Treino';
