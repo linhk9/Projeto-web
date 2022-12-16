@@ -40,7 +40,7 @@ class PlanotreinoSearch extends Planotreino
      */
     public function search($params)
     {
-        $query = Planotreino::find();
+        $query = Planotreino::find()->where(['not', ['id' => '1']]);
 
         // add conditions that should always apply here
 

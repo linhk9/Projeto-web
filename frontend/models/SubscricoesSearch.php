@@ -4,12 +4,12 @@ namespace frontend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Informacaotreino;
+use common\models\Subscricoes;
 
 /**
- * InformacaotreinoSearch represents the model behind the search form of `common\models\Informacaotreino`.
+ * SubscricoesSearch represents the model behind the search form of `common\models\Subscricoes`.
  */
-class InformacaotreinoSearch extends Informacaotreino
+class SubscricoesSearch extends Subscricoes
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,9 @@ class InformacaotreinoSearch extends Informacaotreino
     public function rules()
     {
         return [
-            [['id', 'id_planoTreino'], 'integer'],
-            [['titulo', 'descricao'], 'safe'],
+            [['id'], 'integer'],
+            [['nome', 'descricao'], 'safe'],
+            [['preco'], 'number'],
         ];
     }
 
@@ -40,7 +41,7 @@ class InformacaotreinoSearch extends Informacaotreino
      */
     public function search($params)
     {
-        $query = Informacaotreino::find()->where(['id_planoTreino' => 1]);
+        $query = Subscricoes::find()->where(['not', ['id' => 1]]);
 
         // add conditions that should always apply here
 
@@ -59,10 +60,10 @@ class InformacaotreinoSearch extends Informacaotreino
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'id_planoTreino' => $this->id_planoTreino,
+            'preco' => $this->preco,
         ]);
 
-        $query->andFilterWhere(['like', 'titulo', $this->titulo])
+        $query->andFilterWhere(['like', 'nome', $this->nome])
             ->andFilterWhere(['like', 'descricao', $this->descricao]);
 
         return $dataProvider;

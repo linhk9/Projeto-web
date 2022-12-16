@@ -151,6 +151,10 @@
             $apagarInfoTreino->description = 'Apagar Informação de Treino';
             $auth->add($apagarInfoTreino);
 
+            $comprarSubscricao = $auth->createPermission('comprarSubscricao');
+            $comprarSubscricao->description = 'Comprar Subscricao';
+            $auth->add($comprarSubscricao);
+
 			$cliente = $auth->createRole('cliente');
 			$auth->add($cliente);
 
@@ -201,6 +205,9 @@
             $auth->addChild($admin, $criarUser);
             $auth->addChild($staff, $alterarUser);
             $auth->addChild($admin, $apagarUser);
+
+            // cliente roles
+            $auth->addChild($cliente, $comprarSubscricao);
 
             $auth->addChild($admin, $staff);
 			
