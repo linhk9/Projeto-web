@@ -351,21 +351,21 @@ INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_res
 -- A despejar estrutura para tabela projeto_ginasio.userdata
 CREATE TABLE IF NOT EXISTS `userdata` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `firstName` varchar(255) NOT NULL,
   `lastName` varchar(255) NOT NULL,
   `telemovel` int(9) NOT NULL,
   `morada` varchar(255) NOT NULL,
-  `subscricao` int(1) NOT NULL DEFAULT '1',
+  `id_subscricao` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
-  KEY `FK_userData_user` (`user_id`),
-  KEY `FK_userData_subscricao` (`subscricao`),
-  CONSTRAINT `FK_userData_subscricao` FOREIGN KEY (`subscricao`) REFERENCES `subscricoes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_userData_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `FK_userData_user` (`id_user`),
+  KEY `FK_userData_subscricao` (`id_subscricao`),
+  CONSTRAINT `FK_userData_subscricao` FOREIGN KEY (`id_subscricao`) REFERENCES `subscricoes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_userData_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- A despejar dados para tabela projeto_ginasio.userdata: ~1 rows (aproximadamente)
-INSERT INTO `userdata` (`id`, `user_id`, `firstName`, `lastName`, `telemovel`, `morada`, `subscricao`) VALUES
+INSERT INTO `userdata` (`id`, `id_user`, `firstName`, `lastName`, `telemovel`, `morada`, `id_subscricao`) VALUES
 	(1, 2, 'Filipe', 'Marques', 913194666, 'Leiria, rua xpto', 1),
 	(7, 8, 'staff', 'staff', 912213321, 'xpto', 1),
 	(8, 9, 'cliente', 'cliente', 981283774, 'xpto', 2);
