@@ -21,7 +21,23 @@ $this->title = 'Projeto - Ginasio';
 <!-- Page Content-->
 <div class="container px-4 px-lg-5">
 
-    
+    <!-- Start Call Action Area -->
+    <section class="trending-product section">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-8 offset-lg-2 col-12">
+                    <div class="inner">
+                        <div class="content">
+                            <h2 class="wow fadeInUp" data-wow-delay=".4s">Compra uma subscrição para teres acesso á app móvel.</h2><br>
+                            <img src="https://www.fitnessfactory.pt/images/club/1b8f7621-0d14-44b7-8ca4-529fa00fa8a1.jpg" alt="Ginasio">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Call Action Area -->
+
 </div>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
