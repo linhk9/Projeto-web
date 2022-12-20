@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `auth_assignment` (
 -- A despejar dados para tabela projeto_ginasio.auth_assignment: ~2 rows (aproximadamente)
 INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
 	('admin', '2', 1671204353),
-	('cliente', '10', 1671204758);
+	('cliente', '12', 1671549962);
 
 -- A despejar estrutura para tabela projeto_ginasio.auth_item
 CREATE TABLE IF NOT EXISTS `auth_item` (
@@ -194,10 +194,12 @@ CREATE TABLE IF NOT EXISTS `estatisticas` (
   `tamanhoAbdominal` float DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_userdata_idx` (`id_userdata`),
-  CONSTRAINT `id_estatisticas_userdata` FOREIGN KEY (`id_userdata`) REFERENCES `userdata` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  CONSTRAINT `id_estatisticas_userdata` FOREIGN KEY (`id_userdata`) REFERENCES `userdata` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 
--- A despejar dados para tabela projeto_ginasio.estatisticas: ~0 rows (aproximadamente)
+-- A despejar dados para tabela projeto_ginasio.estatisticas: ~1 rows (aproximadamente)
+INSERT INTO `estatisticas` (`id`, `id_userdata`, `imc`, `idade`, `peso`, `altura`, `tamanhoBiceps`, `tamanhoTriceps`, `tamanhoPeito`, `tamanhoAbdominal`) VALUES
+	(1, 12, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- A despejar estrutura para tabela projeto_ginasio.fatura
 CREATE TABLE IF NOT EXISTS `fatura` (
@@ -345,13 +347,13 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `password_reset_token` (`password_reset_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- A despejar dados para tabela projeto_ginasio.user: ~3 rows (aproximadamente)
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`, `verification_token`) VALUES
 	(2, 'filipe', '_oVLJx1e57o4v2zRJyi5kA1ZBRa54wYL', '$2y$13$iTCH9FVakT5Zf4NS4dI/VufwJHW9wBuNSr5aStoUswTeEDPGJL9.C', NULL, '2211921@my.ipleiria.pt', 10, 1666628655, 1667236194, 'Ot17Dcr9OnIBsj-DV8btojnpq0QxqxgS_1666628655'),
 	(8, 'staff', 'Nh0Z4q5naZiqS8BxUUGw-uK3kfEAqLGf', '$2y$13$kQkXk0FBicyXgYpOT33sGeWDkvTd5/EaDXyhNFE0q0finAFHLTdb.', NULL, 'staff@gmail.com', 10, 1668514264, 1668514264, '4m2wR3JDZXbqoaFSuqlortmWrCrh27uG_1668514264'),
-	(10, 'cliente', 'Rqr-bCVtNdsPYC6I9bGYcATkmxZB9xdk', '$2y$13$YTKgK.RKJVSGxxTUBPYhiu/NfqoDCeXO9kzxeRTo/fafmDcX44RBW', NULL, 'cliente@gmail.com', 10, 1671204758, 1671204758, 'FoSQiG7RMsvJq7WfLIqBKsCQsJ0ifRjJ_1671204758');
+	(12, 'cliente', 'Fx7iiZjouRHX4zzl8_6f1jl_vzV8MUSr', '$2y$13$OYWmtF/DUurhr9Vnyex4ROUbsr8TEBFb8cCMoQegAbki1lScS9Pzu', NULL, 'cliente@gmail.com', 10, 1671549962, 1671549962, 'g6MMjKGmQ1k8NCTILCWJSWOxD1m9gwDs_1671549962');
 
 -- A despejar estrutura para tabela projeto_ginasio.userdata
 CREATE TABLE IF NOT EXISTS `userdata` (
@@ -363,17 +365,18 @@ CREATE TABLE IF NOT EXISTS `userdata` (
   `morada` varchar(255) NOT NULL,
   `id_subscricao` int(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_userdata_id_user` (`id_user`),
   KEY `FK_userData_user` (`id_user`),
   KEY `FK_userData_subscricao` (`id_subscricao`),
   CONSTRAINT `FK_userData_subscricao` FOREIGN KEY (`id_subscricao`) REFERENCES `subscricoes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_userData_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3;
 
 -- A despejar dados para tabela projeto_ginasio.userdata: ~3 rows (aproximadamente)
 INSERT INTO `userdata` (`id`, `id_user`, `firstName`, `lastName`, `telemovel`, `morada`, `id_subscricao`) VALUES
 	(1, 2, 'Filipe', 'Marques', 913194666, 'Leiria, rua xpto', 1),
 	(7, 8, 'staff', 'staff', 912213321, 'xpto', 1),
-	(9, 10, 'cliente', 'cliente', 981283774, 'xpto', 1);
+	(11, 12, 'cliente', 'cliente', 912123321, 'Leiria, rua xpto', 1);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
