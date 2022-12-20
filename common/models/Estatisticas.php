@@ -38,7 +38,7 @@ class Estatisticas extends \yii\db\ActiveRecord
         return [
             [['id_userdata', 'idade'], 'integer'],
             [['imc', 'peso', 'altura', 'tamanhoBiceps', 'tamanhoTriceps', 'tamanhoPeito', 'tamanhoAbdominal'], 'number'],
-            [['id_userdata'], 'exist', 'skipOnError' => true, 'targetClass' => Userdata::class, 'targetAttribute' => ['id_userdata' => 'id']],
+            [['id_userdata'], 'exist', 'skipOnError' => true, 'targetClass' => Userdata::class, 'targetAttribute' => ['id_userdata' => 'id_user']],
         ];
     }
 

@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use common\models\Estatisticas;
 use Yii;
 use yii\base\Model;
 use common\models\User;
@@ -87,11 +88,24 @@ class SignupForm extends Model
 
         $userDataCreated = $userData->save();
 
+        $userEstatisticas = new Estatisticas();
+        $userEstatisticas->id_userdata = $user->id;
+        $userEstatisticas->imc = 0.0;
+        $userEstatisticas->idade = 0;
+        $userEstatisticas->peso = 0.0;
+        $userEstatisticas->altura = 0.0;
+        $userEstatisticas->tamanhoBiceps = 0.0;
+        $userEstatisticas->tamanhoTriceps = 0.0;
+        $userEstatisticas->tamanhoPeito = 0.0;
+        $userEstatisticas->tamanhoAbdominal = 0.0;
+
+        $userEstatisticasCreated = $userEstatisticas->save();
+
         $auth = \Yii::$app->authManager;
         $clienteRole = $auth->getRole('cliente');
         $auth->assign($clienteRole, $user->getId());
 
-        return $userCreated && $userDataCreated;
+        return $userCreated && $userDataCreated && $userEstatisticasCreated;
     }
 
     /**

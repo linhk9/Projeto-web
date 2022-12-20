@@ -79,7 +79,14 @@ class Userdata extends \yii\db\ActiveRecord
      */
     public function getEstatisticas()
     {
-        return $this->hasMany(Estatisticas::class, ['id_userdata' => 'id']);
+        return $this->hasMany(Estatisticas::class, ['id_userdata' => 'id_user']);
+    }
+
+    public function getEstatisticasId()
+    {
+        $estatistica = Estatisticas::find()->where(['id_userdata' => $this->id_user])->one();
+
+        return $estatistica->id;
     }
 
     /**

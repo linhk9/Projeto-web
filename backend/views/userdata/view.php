@@ -22,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a('Estatísticas', ['/estatisticas/view', 'id' => $model->getEstatisticasId()], ['class' => 'btn btn-primary']) ?>
     </p>
 
     <?= DetailView::widget([
