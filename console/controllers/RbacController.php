@@ -194,10 +194,10 @@
             $auth->addChild($admin, $alterarQRCode);
             $auth->addChild($admin, $apagarQRCode);
 
-            $auth->addChild($admin, $gerirSubscricao);
-            $auth->addChild($admin, $verSubscricao);
+            $auth->addChild($staff, $gerirSubscricao);
+            $auth->addChild($staff, $verSubscricao);
             $auth->addChild($admin, $apagarSubscricao);
-            $auth->addChild($admin, $alterarSubscricao);
+            $auth->addChild($staff, $alterarSubscricao);
             $auth->addChild($admin, $criarSubscricao);
 
             $auth->addChild($staff, $gerirUser);
@@ -212,5 +212,7 @@
             $auth->addChild($admin, $staff);
 			
             $auth->assign($admin, 2);
+            $auth->assign($staff, 8);
+            $auth->assign($cliente, 12);
         }
     }
