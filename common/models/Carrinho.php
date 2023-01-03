@@ -44,8 +44,8 @@ class Carrinho extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_userdata' => 'Id Userdata',
-            'id_produto' => 'Id Produto',
+            'id_userdata' => 'Cliente',
+            'id_produto' => 'Produto',
             'quantidade' => 'Quantidade',
         ];
     }

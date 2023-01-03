@@ -483,3 +483,82 @@ $_SERVER = [
     ]
     'argc' => 2
 ]
+2023-01-03 10:31:51 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "init/rbac". in C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('init/rbac', Array)
+#1 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('init/rbac', Array)
+#2 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 C:\wamp64\www\projeto\yii(23): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "init/rbac". in C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php:183
+Stack trace:
+#0 C:\wamp64\www\projeto\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('init/rbac', Array)
+#1 C:\wamp64\www\projeto\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 C:\wamp64\www\projeto\yii(23): yii\base\Application->run()
+#3 {main}
+2023-01-03 10:31:51 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-OH0BG4H'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Filipe Marques'
+    'LOCALAPPDATA' => 'C:\\Users\\Filipe Marques\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-OH0BG4H'
+    'MOSQUITTO_DIR' => 'C:\\Program Files\\mosquitto'
+    'NUMBER_OF_PROCESSORS' => '12'
+    'OneDrive' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\Filipe Marques\\OneDrive - IPLeiria'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.1.0;C:\\composer;;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\Filipe Marques\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Filipe Marques\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Filipe Marques\\AppData\\Local\\gitkraken\\bin;C:\\Users\\Filipe Marques\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Filipe Marques\\.dotnet\\tools;C:\\Users\\Filipe Marques\\AppData\\Roaming\\npm;C:\\Users\\Filipe Marques\\AppData\\Local\\JetBrains\\Toolbox\\scripts;%USERPROFILE%\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 141 Stepping 1, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '8d01'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\FILIPE~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-OH0BG4H'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-OH0BG4H'
+    'USERNAME' => 'Filipe Marques'
+    'USERPROFILE' => 'C:\\Users\\Filipe Marques'
+    'windir' => 'C:\\WINDOWS'
+    'YII_PATH' => 'C:\\wamp64\\www\\projeto\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\projeto\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\projeto\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1672741911.2328
+    'REQUEST_TIME' => 1672741911
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\projeto\\yii'
+        1 => 'init/rbac'
+    ]
+    'argc' => 2
+]

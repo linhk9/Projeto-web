@@ -2,17 +2,17 @@
 
 namespace frontend\controllers;
 
-use common\models\Espacosverdes;
-use frontend\models\EspacosverdesSearch;
+use common\models\Carrinho;
+use frontend\models\CarrinhoSearch;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * EspacosverdesController implements the CRUD actions for Espacosverdes model.
+ * CarrinhoController implements the CRUD actions for Carrinho model.
  */
-class EspacosverdesController extends Controller
+class CarrinhoController extends Controller
 {
     /**
      * @inheritDoc
@@ -27,7 +27,7 @@ class EspacosverdesController extends Controller
                     'rules' => [
                         [
                             'allow' => true,
-                            'actions' => ['index', 'view'],
+                            'actions' => ['index', 'update', 'delete'],
                             'roles' => ['cliente'],
                         ]
                     ],
@@ -43,13 +43,13 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Lists all Espacosverdes models.
+     * Lists all Carrinho models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new EspacosverdesSearch();
+        $searchModel = new CarrinhoSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -59,7 +59,7 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Displays a single Espacosverdes model.
+     * Displays a single Carrinho model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -72,13 +72,13 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Creates a new Espacosverdes model.
+     * Creates a new Carrinho model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Espacosverdes();
+        $model = new Carrinho();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -94,7 +94,7 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Updates an existing Espacosverdes model.
+     * Updates an existing Carrinho model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return string|\yii\web\Response
@@ -105,7 +105,7 @@ class EspacosverdesController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [
@@ -114,7 +114,7 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Deletes an existing Espacosverdes model.
+     * Deletes an existing Carrinho model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return \yii\web\Response
@@ -128,15 +128,15 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Finds the Espacosverdes model based on its primary key value.
+     * Finds the Carrinho model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Espacosverdes the loaded model
+     * @return Carrinho the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Espacosverdes::findOne(['id' => $id])) !== null) {
+        if (($model = Carrinho::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

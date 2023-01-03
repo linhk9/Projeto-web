@@ -155,6 +155,10 @@
             $comprarSubscricao->description = 'Comprar Subscricao';
             $auth->add($comprarSubscricao);
 
+            $comprarProduto = $auth->createPermission('comprarProduto');
+            $comprarProduto->description = 'Comprar Produto';
+            $auth->add($comprarProduto);
+
 			$cliente = $auth->createRole('cliente');
 			$auth->add($cliente);
 
@@ -208,6 +212,7 @@
 
             // cliente roles
             $auth->addChild($cliente, $comprarSubscricao);
+            $auth->addChild($cliente, $comprarProduto);
 
             $auth->addChild($admin, $staff);
 			

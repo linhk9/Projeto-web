@@ -94,6 +94,9 @@ AppAsset::register($this);
                                         <?= Html::a('Loja', ['/loja/index']) ?>
                                     </li>
                                     <li class="nav-item">
+                                        <?= Html::a('Faturas', ['/fatura/index']) ?>
+                                    </li>
+                                    <li class="nav-item">
                                         <?= Html::a('Planos de Treino', ['/planotreino/index']) ?>
                                     </li>
                                     <li class="nav-item">
@@ -106,6 +109,15 @@ AppAsset::register($this);
                             </div> <!-- navbar collapse -->
                         </nav>
                         <!-- End Navbar -->
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="nav-inner" style="float: right;">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <?= Html::a('Carrinho', ['/carrinho/index']) ?>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

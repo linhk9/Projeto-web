@@ -2,17 +2,22 @@
 
 namespace frontend\controllers;
 
-use common\models\Espacosverdes;
-use frontend\models\EspacosverdesSearch;
+use common\models\Carrinho;
+use common\models\Fatura;
+use common\models\FaturaProduto;
+use common\models\Produto;
+use common\models\User;
+use common\models\Userdata;
+use frontend\models\FaturaSearch;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * EspacosverdesController implements the CRUD actions for Espacosverdes model.
+ * FaturaController implements the CRUD actions for Fatura model.
  */
-class EspacosverdesController extends Controller
+class FaturaController extends Controller
 {
     /**
      * @inheritDoc
@@ -27,7 +32,7 @@ class EspacosverdesController extends Controller
                     'rules' => [
                         [
                             'allow' => true,
-                            'actions' => ['index', 'view'],
+                            'actions' => ['index', 'view', 'create'],
                             'roles' => ['cliente'],
                         ]
                     ],
@@ -43,13 +48,13 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Lists all Espacosverdes models.
+     * Lists all Fatura models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new EspacosverdesSearch();
+        $searchModel = new FaturaSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -59,42 +64,66 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Displays a single Espacosverdes model.
+     * Displays a single Fatura model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id)
     {
+        $faturaProdutos = FaturaProduto::findAll(['id_fatura' => $id]);
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'model2' => $faturaProdutos
         ]);
     }
 
     /**
-     * Creates a new Espacosverdes model.
+     * Creates a new Fatura model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Espacosverdes();
+        $user = \Yii::$app->user->identity;
+        $userdata = Userdata::findOne(['id_user' => $user->id]);
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
-        } else {
-            $model->loadDefaultValues();
+        $fatura = new Fatura();
+        $carrinho = Carrinho::find()->where(['id_userdata' => $userdata->id])->all();
+
+        $fatura->id_userdata = $userdata->id;
+        $fatura->data = time();
+
+        $fatura->save();
+
+        foreach ($carrinho as $item) {
+            $faturaProduto = new FaturaProduto();
+            $produto = Produto::findOne(['id' => $item->id_produto]);
+
+            $faturaProduto->id_fatura = $fatura->id;
+            $faturaProduto->id_produto = $item->id_produto;
+            $faturaProduto->data = time();
+            $faturaProduto->quantidade = $item->quantidade;
+            $faturaProduto->preco = $produto->preco * $item->quantidade;
+
+            $produto->stock -= $item->quantidade;
+
+            $faturaProduto->save();
+            $produto->save();
+
+            $fatura->total += $faturaProduto->preco;
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        $fatura->save();
+
+        Carrinho::deleteAll(['id_userdata' => $userdata->id]);
+
+        return $this->redirect(['carrinho/index']);
     }
 
     /**
-     * Updates an existing Espacosverdes model.
+     * Updates an existing Fatura model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return string|\yii\web\Response
@@ -114,7 +143,7 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Deletes an existing Espacosverdes model.
+     * Deletes an existing Fatura model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return \yii\web\Response
@@ -128,15 +157,15 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Finds the Espacosverdes model based on its primary key value.
+     * Finds the Fatura model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Espacosverdes the loaded model
+     * @return Fatura the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Espacosverdes::findOne(['id' => $id])) !== null) {
+        if (($model = Fatura::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

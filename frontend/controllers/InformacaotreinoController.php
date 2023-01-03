@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use common\models\Informacaotreino;
 use frontend\models\InformacaotreinoSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -21,6 +22,16 @@ class InformacaotreinoController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::class,
+                    'rules' => [
+                        [
+                            'allow' => true,
+                            'actions' => ['index', 'view'],
+                            'roles' => ['cliente'],
+                        ]
+                    ],
+                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [

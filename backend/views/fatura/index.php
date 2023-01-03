@@ -28,13 +28,14 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label' => 'Cliente',
                 'value' => function($model) {
-                    return $model->userData->primeiroNome . ' ' . $model->userData->ultimoNome;
+                    return $model->userdata->firstName . ' ' . $model->userdata->lastName;
                 }
             ],
             'data',
             'total',
             [
                 'class' => ActionColumn::className(),
+                'template' => '{view} {delete}',
                 'urlCreator' => function ($action, Fatura $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                  }

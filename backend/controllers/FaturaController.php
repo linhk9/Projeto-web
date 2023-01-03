@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use common\models\Fatura;
 use backend\models\FaturaSearch;
+use common\models\FaturaProduto;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -111,8 +112,8 @@ class FaturaController extends Controller
      */
     public function actionDelete($id)
     {
+        FaturaProduto::deleteAll(['id_fatura' => $id]);
         $this->findModel($id)->delete();
-
         return $this->redirect(['index']);
     }
 

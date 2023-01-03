@@ -2,17 +2,19 @@
 
 namespace frontend\controllers;
 
-use common\models\Espacosverdes;
-use frontend\models\EspacosverdesSearch;
+use common\models\Carrinho;
+use common\models\Produto;
+use common\models\Userdata;
+use frontend\models\ProdutoSearch;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * EspacosverdesController implements the CRUD actions for Espacosverdes model.
+ * LojaController implements the CRUD actions for Produto model.
  */
-class EspacosverdesController extends Controller
+class LojaController extends Controller
 {
     /**
      * @inheritDoc
@@ -21,10 +23,15 @@ class EspacosverdesController extends Controller
     {
         return array_merge(
             parent::behaviors(),
-            [
+                [
                 'access' => [
                     'class' => AccessControl::class,
                     'rules' => [
+                    [
+                            'allow' => true,
+                            'actions' => ['comprar'],
+                            'roles' => ['comprarProduto'],
+                        ],
                         [
                             'allow' => true,
                             'actions' => ['index', 'view'],
@@ -43,13 +50,13 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Lists all Espacosverdes models.
+     * Lists all Produto models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new EspacosverdesSearch();
+        $searchModel = new ProdutoSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -58,8 +65,40 @@ class EspacosverdesController extends Controller
         ]);
     }
 
+    public function actionComprar($id)
+    {
+        if ($this->request->isPost) {
+            $user = \Yii::$app->user->identity;
+            $userdata = Userdata::findOne(['id_user' => $user->id]);
+
+            if ($userdata) {
+                $carrinhoModel = new Carrinho();
+
+                $produto = Produto::findOne(['id' => $id]);
+                $produtoCarrinho = Carrinho::findOne(['id_produto' => $id, 'id_userdata' => $userdata->id]);
+
+                if ($produto->stock > 0) {
+                    $carrinhoModel->id_produto = $id;
+                    $carrinhoModel->id_userdata = $userdata->id;
+
+                    if ($produtoCarrinho) {
+                        if ($produtoCarrinho->quantidade < $produto->stock) {
+                            ++$produtoCarrinho->quantidade;
+                            $produtoCarrinho->save();
+                        }
+                    } else {
+                        $carrinhoModel->quantidade = 1;
+                        $carrinhoModel->save();
+                    }
+                }
+            }
+        }
+
+        return $this->redirect(['index']);
+    }
+
     /**
-     * Displays a single Espacosverdes model.
+     * Displays a single Produto model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -72,13 +111,13 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Creates a new Espacosverdes model.
+     * Creates a new Produto model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Espacosverdes();
+        $model = new Produto();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -94,7 +133,7 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Updates an existing Espacosverdes model.
+     * Updates an existing Produto model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return string|\yii\web\Response
@@ -114,7 +153,7 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Deletes an existing Espacosverdes model.
+     * Deletes an existing Produto model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return \yii\web\Response
@@ -128,15 +167,15 @@ class EspacosverdesController extends Controller
     }
 
     /**
-     * Finds the Espacosverdes model based on its primary key value.
+     * Finds the Produto model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Espacosverdes the loaded model
+     * @return Produto the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Espacosverdes::findOne(['id' => $id])) !== null) {
+        if (($model = Produto::findOne(['id' => $id])) !== null) {
             return $model;
         }
 
